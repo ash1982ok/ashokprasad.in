@@ -1,3 +1,4 @@
+import { ProjectsService } from './projects.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectListComponent implements OnInit {
 
-  constructor() { }
+  projectService:ProjectsService;
+  projectListJson;
+
+  constructor( projectService:ProjectsService ) {
+    this.projectService = projectService;
+  }
 
   ngOnInit(): void {
+    this.projectListJson = this.projectService.getProjectsList();
   }
 
 }

@@ -10,11 +10,12 @@ import { ProfileComponent } from './component/pages/profile/profile.component';
 import { NotfoundComponent } from './component/pages/notfound/notfound.component';
 import { ProjectListComponent } from './component/pages/profile/project-list/project-list.component';
 import { ProjectCardComponent } from './component/pages/profile/project-card/project-card.component';
+import { ProjectsService } from './component/pages/profile/project-list/projects.service';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, IntroComponent, AboutComponent, ProfileComponent, NotfoundComponent, ProjectListComponent, ProjectCardComponent],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  providers: [ProjectsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
