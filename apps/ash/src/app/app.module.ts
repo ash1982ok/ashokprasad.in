@@ -11,9 +11,10 @@ import { NotfoundComponent } from './component/pages/notfound/notfound.component
 import { ProjectListComponent } from './component/pages/profile/project-list/project-list.component';
 import { ProjectCardComponent } from './component/pages/profile/project-card/project-card.component';
 import { ProjectsService } from './component/pages/profile/project-list/projects.service';
+import { UnderConstructionComponent } from './component/under-construction/under-construction.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, IntroComponent, AboutComponent, ProfileComponent, NotfoundComponent, ProjectListComponent, ProjectCardComponent],
+  declarations: [AppComponent, HeaderComponent, IntroComponent, AboutComponent, ProfileComponent, NotfoundComponent, ProjectListComponent, ProjectCardComponent, UnderConstructionComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [ProjectsService],
   bootstrap: [AppComponent],
