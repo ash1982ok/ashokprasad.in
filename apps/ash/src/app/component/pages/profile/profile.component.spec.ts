@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProfileComponent } from './profile.component';
+import { ProjectListComponent } from './project-list/project-list.component';
+import {ProjectCardComponent} from './project-card/project-card.component';
 
 describe('ProfileComponent', () => {
   let component: ProfileComponent;
@@ -8,7 +10,7 @@ describe('ProfileComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProfileComponent ]
+      declarations: [ ProfileComponent, ProjectListComponent , ProjectCardComponent]
     })
     .compileComponents();
   });

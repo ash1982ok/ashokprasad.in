@@ -23,7 +23,7 @@ export class ProjectsService {
             " Query, Google functions, Google Tag Manager, Zeotap etc)",
             "</li>",
             "<li>",
-            "- New frontend architecture using React,Redux",
+            "- New frontend architecture using Angular,Angular Elements",
             " GraphQL, Storybooks, Cypress, Jest, Strapi Headless CMS,",
             " TypeScript",
             "</li>",
