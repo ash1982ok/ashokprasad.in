@@ -143,6 +143,120 @@
           }
         }
       }
+    },
+    "contentmigration": {
+      "projectType": "application",
+      "root": "apps/contentmigration",
+      "sourceRoot": "apps/contentmigration/src",
+      "prefix": "mysite",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/contentmigration",
+            "index": "apps/contentmigration/src/index.html",
+            "main": "apps/contentmigration/src/main.ts",
+            "polyfills": "apps/contentmigration/src/polyfills.ts",
+            "tsConfig": "apps/contentmigration/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/contentmigration/src/favicon.ico",
+              "apps/contentmigration/src/assets"
+            ],
+            "styles": ["apps/contentmigration/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/contentmigration/src/environments/environment.ts",
+                  "with": "apps/contentmigration/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "contentmigration:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "contentmigration:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "contentmigration:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/contentmigration/src/**/*.ts",
+              "apps/contentmigration/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/contentmigration"],
+          "options": {
+            "jestConfig": "apps/contentmigration/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "contentmigration-e2e": {
+      "root": "apps/contentmigration-e2e",
+      "sourceRoot": "apps/contentmigration-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/contentmigration-e2e/cypress.json",
+            "tsConfig": "apps/contentmigration-e2e/tsconfig.e2e.json",
+            "devServerTarget": "contentmigration:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "contentmigration:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/contentmigration-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
     }
   }
 }
